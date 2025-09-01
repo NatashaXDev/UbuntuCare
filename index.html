@@ -1,0 +1,244 @@
+html
+<!--
+Copyright (c) 2025 UbuntuCare
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UbuntuCare - Support for Trauma Survivors</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Safe Exit Button -->
+    <button class="safe-exit" onclick="safeExit()" title="Quick exit to Google">
+      <span>×</span> Safe Exit
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="UbuntuCare Log.png" alt="" class="logo-img" />
+          <span class="logo-text">UbuntuCare</span>
+        </div>
+        <div class="nav-links">
+          <a href="#home" onclick="showSection('home')">Home</a>
+          <a href="#chat" onclick="showSection('chat')">Support Chat</a>
+          <a href="#resources" onclick="showSection('resources')">Resources</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+      <div class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">You are not alone</h1>
+          <p class="hero-subtitle">
+            UbuntuCare provides safe, confidential support for trauma survivors
+            in South Africa. We believe in your strength and are here to help
+            you heal.
+          </p>
+
+          <!-- Emergency Numbers -->
+          <div class="emergency-section">
+            <h2>Emergency Support</h2>
+            <div class="emergency-cards">
+              <div class="emergency-card">
+                <div class="emergency-icon">📞</div>
+                <h3>Crisis Helpline</h3>
+                <p class="emergency-number">0800 567 567</p>
+                <p class="emergency-desc">24/7 Crisis Support</p>
+              </div>
+              <div class="emergency-card">
+                <div class="emergency-icon">🆘</div>
+                <h3>Abuse Hotline</h3>
+                <p class="emergency-number">0800 150 150</p>
+                <p class="emergency-desc">Gender-Based Violence</p>
+              </div>
+              <div class="emergency-card">
+                <div class="emergency-icon">💜</div>
+                <h3>Suicide Prevention</h3>
+                <p class="emergency-number">0800 567 567</p>
+                <p class="emergency-desc">SADAG Helpline</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-section">
+            <button class="btn-primary" onclick="showSection('chat')">
+              Start Support Chat
+            </button>
+            <button class="btn-secondary" onclick="showSection('resources')">
+              View Resources
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission Statement -->
+      <div class="mission-section">
+        <div class="mission-content">
+          <h2>Our Mission</h2>
+          <p>
+            UbuntuCare is dedicated to providing compassionate,
+            culturally-sensitive support for trauma survivors in South Africa.
+            We understand that healing is a journey, and we're here to walk
+            alongside you with respect, dignity, and hope.
+          </p>
+          <div class="values">
+            <div class="value-item">
+              <div class="value-icon">🛡️</div>
+              <h3>Safe Space</h3>
+              <p>Your privacy and safety are our top priorities</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🤲</div>
+              <h3>Ubuntu Spirit</h3>
+              <p>We believe in the interconnectedness of humanity</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🌱</div>
+              <h3>Healing Journey</h3>
+              <p>Supporting your path to recovery and growth</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section id="chat" class="section">
+      <div class="chat-container">
+        <div class="chat-header">
+          <h2>Support Chat</h2>
+          <p>
+            Talk to our AI support assistant. Remember, this is a safe space.
+          </p>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+          <div class="chat-message bot-message">
+            <div class="message-avatar">💜</div>
+            <div class="message-content">
+              <p>
+                Hello, and welcome to UbuntuCare. I'm here to listen and provide
+                support. How are you feeling today?
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input-container">
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Type your message here..."
+            maxlength="500"
+          />
+          <button id="sendButton" onclick="sendMessage()">Send</button>
+        </div>
+
+        <div class="chat-disclaimer">
+          <p>
+            <strong>Disclaimer:</strong> This is an AI assistant for initial
+            support. For immediate crisis situations, please call the emergency
+            numbers above or contact local emergency services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+      <div class="resources-container">
+        <div class="resources-header">
+          <h2>Support Resources</h2>
+          <p>Find additional help and information</p>
+        </div>
+
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="resource-icon">🏥</div>
+            <h3>Medical Support</h3>
+            <p>
+              Find trauma-informed healthcare providers and medical assistance
+              programs.
+            </p>
+            <ul>
+              <li>Rape Crisis Cape Town: 021 447 9762</li>
+              <li>Childline SA: 116</li>
+              <li>Stop Gender Violence: 0800 150 150</li>
+            </ul>
+          </div>
+
+          <div class="resource-card">
+            <div class="resource-icon">⚖️</div>
+            <h3>Legal Aid</h3>
+            <p>Access legal support and know your rights as a survivor.</p>
+            <ul>
+              <li>Legal Aid SA: 0800 110 110</li>
+              <li>Women's Legal Centre: 021 424 5660</li>
+              <li>Family Violence Unit: 012 393 2729</li>
+            </ul>
+          </div>
+
+          <div class="resource-card">
+            <div class="resource-icon">🏠</div>
+            <h3>Safe Shelters</h3>
+            <p>
+              Emergency accommodation and safe houses for those in immediate
+              danger.
+            </p>
+            <ul>
+              <li>National Shelter Movement: 011 339 1122</li>
+              <li>Nisaa Institute: 011 482 2872</li>
+              <li>Local Social Services: 012 312 7652</li>
+            </ul>
+          </div>
+
+          <div class="resource-card">
+            <div class="resource-icon">💭</div>
+            <h3>Counseling Services</h3>
+            <p>
+              Professional therapy and counseling support for trauma recovery.
+            </p>
+            <ul>
+              <li>SADAG: 011 234 4837</li>
+              <li>Trauma Centre: 021 465 7373</li>
+              <li>Lifeline: 0861 322 322</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <footer
+      style="
+        font-size: 1rem;
+        opacity: 0.8;
+        margin-top: 2rem;
+        text-align: center;
+      "
+    >
+      <p>
+        © 2025 Natasha Smith — Licensed under the
+        <a
+          href="#license"
+          onclick="document.getElementById('license').showModal(); return false;"
+          >MIT License</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
